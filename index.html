@@ -1,0 +1,3031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeCare Multispeciality Hospital – Compassionate Care, Advanced Medicine</title>
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* =========================================
+       1. DESIGN TOKENS & MEDICAL COLOR PALETTE
+       ========================================= */
+    :root {
+      --white: #ffffff;
+      --bg-light: #f4f9fc;
+      --light-blue: #e3f2fd;
+      --light-blue-border: #cde4f7;
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-soft: #e6f7f5;
+      --soft-green: #22c55e;
+      --soft-green-bg: #ecfdf5;
+      --navy: #0f2942;
+      --navy-light: #1e3a5f;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --emergency: #dc2626;
+      --emergency-soft: #fef2f2;
+      --shadow-sm: 0 6px 20px rgba(15, 41, 66, 0.06);
+      --shadow-md: 0 14px 34px rgba(15, 41, 66, 0.1);
+      --shadow-lg: 0 22px 48px rgba(15, 41, 66, 0.16);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-pill: 50px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* =========================================
+       2. RESET & BASE STYLES
+       ========================================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 86px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .brand-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--navy);
+      line-height: 1.22;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-padding {
+      padding: 92px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 54px;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--teal-soft);
+      color: var(--teal-dark);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+      font-size: 2.45rem;
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* =========================================
+       3. BUTTONS
+       ========================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 26px;
+      border-radius: var(--radius-pill);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+    }
+
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+      color: var(--white);
+      box-shadow: 0 8px 22px rgba(13, 148, 136, 0.28);
+    }
+
+    .btn-teal:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(13, 148, 136, 0.4);
+      filter: brightness(1.04);
+    }
+
+    .btn-emergency {
+      background-color: var(--emergency);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.28);
+    }
+
+    .btn-emergency:hover {
+      background-color: #b91c1c;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline-teal {
+      background-color: var(--white);
+      border-color: var(--teal);
+      color: var(--teal-dark);
+    }
+
+    .btn-outline-teal:hover {
+      background-color: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-soft-blue {
+      background-color: var(--light-blue);
+      color: var(--navy);
+    }
+
+    .btn-soft-blue:hover {
+      background-color: var(--navy);
+      color: var(--white);
+    }
+
+    /* =========================================
+       4. TOP BAR & NAVIGATION HEADER
+       ========================================= */
+    .top-alert-bar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.82rem;
+      padding: 8px 0;
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-bar-inner span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .emergency-pill-top {
+      background: var(--emergency);
+      color: var(--white);
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(15, 41, 66, 0.06);
+      border-bottom: 1px solid var(--light-blue-border);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-emblem {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--teal) 0%, #0ea5e9 100%);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      box-shadow: 0 6px 16px rgba(13, 148, 136, 0.28);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background-color: var(--teal);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:not(.nav-cta):hover {
+      color: var(--teal);
+    }
+
+    .nav-links a:not(.nav-cta):hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 10px 20px;
+      font-size: 0.86rem;
+      color: var(--white) !important;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.55rem;
+      color: var(--navy);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* =========================================
+       5. HERO / HOME SECTION
+       ========================================= */
+    .hero {
+      position: relative;
+      padding: 105px 0 95px;
+      background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(15, 41, 66, 0.92) 0%,
+        rgba(15, 65, 92, 0.84) 55%,
+        rgba(13, 148, 136, 0.68) 100%
+      );
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(6px);
+      color: #a7f3d0;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 3.45rem;
+      color: var(--white);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: #5eead4;
+    }
+
+    .hero-tagline {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #bae6fd;
+      margin-bottom: 16px;
+    }
+
+    .hero-intro {
+      font-size: 1.03rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-quick-links span {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 600;
+    }
+
+    .quick-chip {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: var(--white);
+      padding: 6px 15px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .quick-chip:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* Hero Right Info Card */
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text-body);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-card > p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-card-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px;
+      border-radius: var(--radius-md);
+      background: var(--bg-light);
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+
+    .hero-card-item:hover {
+      background: var(--teal-soft);
+      transform: translateX(4px);
+    }
+
+    .hero-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .hero-card-item h4 {
+      font-size: 0.98rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-card-item span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* =========================================
+       6. HOSPITAL INFORMATION (ABOUT US)
+       ========================================= */
+    .about-section {
+      background-color: var(--white);
+    }
+
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 64px;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, var(--bg-light) 0%, var(--light-blue) 100%);
+      border: 1px solid var(--light-blue-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal);
+    }
+
+    .stat-card i {
+      font-size: 1.75rem;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .stat-card h3 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .stat-card p {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-media {
+      position: relative;
+    }
+
+    .about-media img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      height: 470px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .accreditation-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      border-left: 5px solid var(--soft-green);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .accreditation-badge i {
+      font-size: 1.8rem;
+      color: var(--soft-green);
+    }
+
+    .about-content h2 {
+      font-size: 2.3rem;
+      margin-bottom: 16px;
+    }
+
+    .about-content > p {
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .mv-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 24px 0;
+    }
+
+    .mv-card {
+      background: var(--bg-light);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border-top: 4px solid var(--teal);
+    }
+
+    .mv-card h4 {
+      font-size: 1.12rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mv-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .care-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .care-highlights li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .care-highlights i {
+      color: var(--soft-green);
+    }
+
+    /* =========================================
+       7. MEDICAL DEPARTMENTS (10 DEPARTMENTS)
+       ========================================= */
+    .departments-section {
+      background-color: var(--bg-light);
+    }
+
+    .departments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .dept-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--light-blue-border);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .dept-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal);
+    }
+
+    .dept-img-wrap {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+      background: var(--light-blue);
+    }
+
+    .dept-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .dept-card:hover .dept-img-wrap img {
+      transform: scale(1.07);
+    }
+
+    .dept-icon-float {
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--white);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .dept-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dept-body h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .dept-body p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .dept-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .dept-actions .btn {
+      padding: 10px 18px;
+      font-size: 0.85rem;
+      width: 100%;
+    }
+
+    /* =========================================
+       8. DOCTOR PROFILES SECTION
+       ========================================= */
+    .doctors-section {
+      background-color: var(--white);
+    }
+
+    .doctor-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .doc-filter-btn {
+      padding: 9px 20px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--light-blue-border);
+      background: var(--bg-light);
+      color: var(--navy);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .doc-filter-btn:hover,
+    .doc-filter-btn.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--white);
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .doctor-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--light-blue-border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .doctor-card.hidden {
+      display: none;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal);
+    }
+
+    .doctor-photo {
+      position: relative;
+      height: 275px;
+      background: var(--light-blue);
+      overflow: hidden;
+    }
+
+    .doctor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+
+    .doctor-card:hover .doctor-photo img {
+      transform: scale(1.05);
+    }
+
+    .exp-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(15, 41, 66, 0.88);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 13px;
+      border-radius: var(--radius-pill);
+    }
+
+    .doctor-info {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .doc-dept-tag {
+      display: inline-block;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+
+    .doctor-info h3 {
+      font-size: 1.32rem;
+      margin-bottom: 4px;
+    }
+
+    .doc-qual {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+    }
+
+    .doc-schedule {
+      background: var(--bg-light);
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.84rem;
+      color: var(--text-body);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .doc-schedule i {
+      color: var(--soft-green);
+      font-size: 1rem;
+    }
+
+    .doctor-info .btn {
+      margin-top: auto;
+      width: 100%;
+      padding: 11px 20px;
+      font-size: 0.88rem;
+    }
+
+    /* =========================================
+       9. MEDICAL SERVICES (9 SERVICES)
+       ========================================= */
+    .services-section {
+      background: linear-gradient(180deg, var(--light-blue) 0%, var(--bg-light) 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      border: 1px solid var(--light-blue-border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: var(--teal-soft);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+
+    .service-card:nth-child(even) .service-icon {
+      background: var(--soft-green-bg);
+      color: #16a34a;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* =========================================
+       10. APPOINTMENT BOOKING SECTION
+       ========================================= */
+    .booking-section {
+      background-color: var(--white);
+    }
+
+    .booking-wrapper {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--light-blue-border);
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      overflow: hidden;
+    }
+
+    .booking-info-panel {
+      background: linear-gradient(155deg, var(--navy) 0%, #0f4c5c 100%);
+      color: var(--white);
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .booking-info-panel h3 {
+      color: var(--white);
+      font-size: 1.9rem;
+      margin-bottom: 14px;
+    }
+
+    .booking-info-panel > p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+      margin-bottom: 26px;
+    }
+
+    .booking-steps {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .booking-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.82rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .request-notice-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(94, 234, 212, 0.45);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 0.85rem;
+      color: #e0f2fe;
+    }
+
+    .booking-form-panel {
+      padding: 44px 40px;
+    }
+
+    .disclaimer-banner {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 4px solid #f59e0b;
+      color: #92400e;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group label span {
+      color: var(--emergency);
+    }
+
+    .form-control {
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 1.5px solid #cbd5e1;
+      background: var(--bg-light);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--navy);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.14);
+    }
+
+    .form-control.error {
+      border-color: var(--emergency);
+      background: var(--emergency-soft);
+    }
+
+    .error-msg {
+      color: var(--emergency);
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .form-group.has-error .error-msg {
+      display: block;
+    }
+
+    .confirmation-card {
+      display: none;
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: var(--soft-green-bg);
+      border: 2px solid var(--soft-green);
+      color: var(--navy);
+      animation: fadeSlide 0.4s ease;
+    }
+
+    .confirmation-card.show {
+      display: block;
+    }
+
+    .confirmation-card h4 {
+      color: #15803d;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================
+       11. HEALTH TIPS & WELLNESS CALCULATOR
+       ========================================= */
+    .health-section {
+      background-color: var(--bg-light);
+    }
+
+    .health-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .tip-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      border: 1px solid var(--light-blue-border);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .tip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal);
+    }
+
+    .tip-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .tip-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--light-blue);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .tip-cat {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--teal);
+      background: var(--teal-soft);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+    }
+
+    .tip-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+    }
+
+    .tip-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive BMI Wellness Quick Check Widget */
+    .bmi-widget {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      border: 1.5px solid var(--teal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .bmi-widget h3 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bmi-widget > p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .bmi-widget .form-group {
+      margin-bottom: 14px;
+    }
+
+    .bmi-result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: var(--light-blue);
+      text-align: center;
+    }
+
+    .bmi-result.show {
+      display: block;
+    }
+
+    .bmi-score {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    /* =========================================
+       12. EMERGENCY BANNER, CONTACT & FOOTER
+       ========================================= */
+    .emergency-strip {
+      background: linear-gradient(135deg, #991b1b 0%, var(--emergency) 100%);
+      color: var(--white);
+      padding: 42px 0;
+    }
+
+    .emergency-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .emergency-strip h3 {
+      color: var(--white);
+      font-size: 1.85rem;
+      margin-bottom: 6px;
+    }
+
+    .emergency-strip p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.96rem;
+    }
+
+    .emergency-call-box {
+      background: var(--white);
+      color: var(--emergency);
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .emergency-call-box:hover {
+      transform: scale(1.04);
+    }
+
+    .contact-section {
+      background-color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 36px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-card {
+      background: var(--bg-light);
+      padding: 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--light-blue-border);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-4px);
+    }
+
+    .contact-card i {
+      font-size: 1.4rem;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .contact-card h4 {
+      font-size: 1.08rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .map-container {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 3px solid var(--light-blue);
+      min-height: 360px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border: 0;
+    }
+
+    footer {
+      background-color: var(--navy);
+      color: rgba(255, 255, 255, 0.82);
+      padding: 68px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+      gap: 36px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand .brand-name {
+      color: var(--white);
+    }
+
+    .footer-brand p {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    footer h4 {
+      color: #5eead4;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 9px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.78);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: #5eead4;
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background: var(--teal);
+      transform: translateY(-3px);
+    }
+
+    /* =========================================
+       13. DEPARTMENT DETAILS & EMERGENCY MODALS
+       ========================================= */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 41, 66, 0.78);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      max-width: 640px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      animation: fadeSlide 0.3s ease;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      font-size: 1.05rem;
+      z-index: 3;
+    }
+
+    .modal-banner-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 28px 32px;
+    }
+
+    .modal-body h3 {
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 22px;
+    }
+
+    .modal-tag {
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* =========================================
+       14. SCROLL REVEAL & RESPONSIVE QUERIES
+       ========================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .booking-wrapper,
+      .health-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .departments-grid,
+      .doctors-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 26px 0;
+        gap: 18px;
+        box-shadow: 0 14px 30px rgba(15, 41, 66, 0.12);
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .stats-ribbon,
+      .departments-grid,
+      .doctors-grid,
+      .services-grid,
+      .tips-grid,
+      .mv-cards,
+      .care-highlights,
+      .form-grid,
+      .contact-cards,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .booking-info-panel,
+      .booking-form-panel {
+        padding: 30px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-alert-bar">
+    <div class="container top-bar-inner">
+      <span><i class="fa-solid fa-location-dot" style="color: #5eead4;"></i> 450 Health Sciences Boulevard, Medical District</span>
+      <span><i class="fa-solid fa-clock" style="color: #5eead4;"></i> OPD: Mon – Sat, 8:00 AM – 8:00 PM | Emergency: 24/7</span>
+      <a href="#emergency" class="emergency-pill-top">
+        <i class="fa-solid fa-truck-medical"></i> 24/7 Emergency: +1 (800) 555-9110
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================
+       1. NAVIGATION HEADER
+       ========================================= -->
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="brand-logo">
+        <span class="logo-emblem">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">LifeCare</span>
+          <span class="brand-sub">Multispeciality Hospital</span>
+        </div>
+      </a>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#health">Health Tips</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#appointment" class="btn btn-teal nav-cta">Book Appointment</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================================
+       1. HOME / HERO SECTION
+       ========================================= -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-tag">
+          <i class="fa-solid fa-shield-heart"></i> NABH & JCI Accredited Tertiary Care Center
+        </div>
+        <h1>Compassionate Care, <span>Advanced Medicine</span></h1>
+        <p class="hero-tagline">Your Health, Our Lifelong Commitment</p>
+        <p class="hero-intro">
+          At LifeCare Multispeciality Hospital, we bring together internationally trained specialists, next-generation diagnostic imaging, and evidence-based clinical protocols to deliver safe, patient-first healthcare for your entire family.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#appointment" class="btn btn-teal">
+            <i class="fa-solid fa-calendar-check"></i> Book an Appointment
+          </a>
+          <button type="button" class="btn btn-emergency" id="openEmergencyModalBtn">
+            <i class="fa-solid fa-phone-volume"></i> Emergency Contact
+          </button>
+        </div>
+
+        <div class="hero-quick-links">
+          <span>Quick Access:</span>
+          <a href="#departments" class="quick-chip"><i class="fa-solid fa-hospital"></i> Departments</a>
+          <a href="#doctors" class="quick-chip"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+          <a href="#appointment" class="quick-chip"><i class="fa-solid fa-clock"></i> Appointments</a>
+        </div>
+      </div>
+
+      <!-- Patient Quick Action Card -->
+      <aside class="hero-card">
+        <h3><i class="fa-solid fa-notes-medical" style="color: var(--teal);"></i> Patient Care Desk</h3>
+        <p>Instant access to our outpatient clinics, diagnostic labs, and trauma unit.</p>
+
+        <a href="#departments" class="hero-card-item">
+          <div class="hero-card-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div>
+            <h4>10 Specialized Departments</h4>
+            <span>Comprehensive multi-disciplinary care</span>
+          </div>
+        </a>
+
+        <a href="#doctors" class="hero-card-item">
+          <div class="hero-card-icon"><i class="fa-solid fa-user-md"></i></div>
+          <div>
+            <h4>Consult Senior Specialists</h4>
+            <span>View schedules & request OPD slots</span>
+          </div>
+        </a>
+
+        <a href="#services" class="hero-card-item">
+          <div class="hero-card-icon"><i class="fa-solid fa-microscope"></i></div>
+          <div>
+            <h4>24/7 Diagnostics & Pharmacy</h4>
+            <span>MRI, CT Scan, NABL Lab & Express Pharmacy</span>
+          </div>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================================
+       2. HOSPITAL INFORMATION (ABOUT US)
+       ========================================= -->
+  <section id="about" class="about-section section-padding">
+    <div class="container">
+      <!-- Key Stats -->
+      <div class="stats-ribbon reveal">
+        <div class="stat-card">
+          <i class="fa-solid fa-award"></i>
+          <h3>25+</h3>
+          <p>Years of Clinical Excellence</p>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-user-doctor"></i>
+          <h3>120+</h3>
+          <p>Specialist Doctors</p>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-hospital-user"></i>
+          <h3>10+</h3>
+          <p>Medical Departments</p>
+        </div>
+        <div class="stat-card">
+          <i class="fa-solid fa-heart-circle-check"></i>
+          <h3>50,000+</h3>
+          <p>Patients Treated Annually</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <img
+            src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x600/e3f2fd/0f2942?text=LifeCare+Hospital+Campus';"
+            alt="LifeCare Multispeciality Hospital Building"
+          />
+          <div class="accreditation-badge">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+              <h4 style="font-size: 1.05rem;">National Quality & Patient Safety Award</h4>
+              <p style="font-size: 0.83rem; color: var(--text-muted);">Recognized for Zero-Infection Modular OTs & Cardiac Care</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <div class="section-badge"><i class="fa-solid fa-hospital"></i> About LifeCare Hospital</div>
+          <h2>25 Years of Trusted Healing & Medical Innovation</h2>
+          <p>
+            Established in 2001 as a dedicated community medical center, <strong>LifeCare Multispeciality Hospital</strong> has grown into a 350-bed quaternary care institution renowned for clinical precision, ethical medical practice, and compassionate bedside care.
+          </p>
+          <p>
+            Our campus integrates modular laminar-airflow operation theaters, dedicated Cardiac & Neuro ICUs, and soothing patient recovery suites designed to accelerate healing.
+          </p>
+
+          <div class="mv-cards">
+            <div class="mv-card">
+              <h4><i class="fa-solid fa-bullseye" style="color: var(--teal);"></i> Our Mission</h4>
+              <p>To provide accessible, transparent, and evidence-based medical care with empathy and clinical excellence for every patient.</p>
+            </div>
+            <div class="mv-card">
+              <h4><i class="fa-solid fa-eye" style="color: var(--teal);"></i> Our Vision</h4>
+              <p>To be the region’s most trusted healthcare sanctuary, pioneering minimally invasive treatments and preventive wellness.</p>
+            </div>
+          </div>
+
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Patient Care Facilities & Achievements</h4>
+          <ul class="care-highlights">
+            <li><i class="fa-solid fa-circle-check"></i> 48-Bed Advanced Critical Care ICU</li>
+            <li><i class="fa-solid fa-circle-check"></i> 3-Tesla MRI & 128-Slice CT Imaging</li>
+            <li><i class="fa-solid fa-circle-check"></i> Cashless Insurance & TPA Desk</li>
+            <li><i class="fa-solid fa-circle-check"></i> Private Deluxe & Suite Recovery Rooms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       3. MEDICAL DEPARTMENTS (10 DEPARTMENTS)
+       ========================================= -->
+  <section id="departments" class="departments-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fa-solid fa-stethoscope"></i> Centers of Excellence</div>
+        <h2>Our Medical Departments</h2>
+        <p>Explore our 10 specialized clinical departments staffed by experienced consultants and supported by modern diagnostic technology.</p>
+      </div>
+
+      <div class="departments-grid" id="departmentsGrid">
+        <!-- 1. Cardiology -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Cardiology';" alt="Cardiology Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-heart-pulse"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Cardiology</h3>
+            <p>Comprehensive heart care including interventional cardiology, echocardiography, electrophysiology, and preventive cardiac rehabilitation.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Cardiology">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Neurology -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Neurology';" alt="Neurology Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-brain"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Neurology</h3>
+            <p>Advanced diagnosis and management of stroke, epilepsy, migraine, movement disorders, and complex neuro-muscular conditions.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Neurology">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Orthopedics -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Orthopedics';" alt="Orthopedics Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-bone"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Orthopedics</h3>
+            <p>Minimally invasive joint replacement, arthroscopic sports injury repair, spine surgery, and personalized physiotherapy recovery.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Orthopedics">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Pediatrics -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Pediatrics';" alt="Pediatrics Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-baby"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Pediatrics</h3>
+            <p>Gentle, child-friendly care covering newborn neonatology, immunization programs, adolescent wellness, and pediatric nutrition.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Pediatrics">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Dermatology -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Dermatology';" alt="Dermatology Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-hand-sparkles"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Dermatology</h3>
+            <p>Clinical skin, hair, and nail treatments including allergy testing, acne & eczema therapy, and safe laser dermatology procedures.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Dermatology">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Gynecology -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Gynecology';" alt="Gynecology Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-person-pregnant"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Gynecology</h3>
+            <p>Holistic women’s healthcare offering high-risk maternity suites, painless birthing, laparoscopic gynecology, and fertility care.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Gynecology">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Dentistry -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Dentistry';" alt="Dentistry Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-tooth"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Dentistry</h3>
+            <p>Painless root canal therapy, dental implants, invisible orthodontics, and preventive oral hygiene care for adults and children.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Dentistry">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Ophthalmology -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Ophthalmology';" alt="Ophthalmology Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-eye"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Ophthalmology</h3>
+            <p>Micro-incision cataract surgery, LASIK vision correction, glaucoma screening, and diabetic retinal care using OCT diagnostics.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Ophthalmology">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. General Medicine -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=General+Medicine';" alt="General Medicine Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-user-nurse"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>General Medicine</h3>
+            <p>Primary adult care for diabetes, hypertension, thyroid disorders, infectious fevers, and comprehensive preventive health screenings.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="General Medicine">View Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Emergency Medicine -->
+        <article class="dept-card reveal">
+          <div class="dept-img-wrap">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/700x420/e3f2fd/0f2942?text=Emergency+Medicine';" alt="Emergency Medicine Department" />
+            <div class="dept-icon-float"><i class="fa-solid fa-truck-medical"></i></div>
+          </div>
+          <div class="dept-body">
+            <h3>Emergency Medicine</h3>
+            <p>24/7 rapid-response trauma center, cardiac resuscitation bays, poison control, and GPS-enabled ACLS ambulance fleet.</p>
+            <div class="dept-actions">
+              <button type="button" class="btn btn-outline-teal view-dept-btn" data-dept="Emergency Medicine">View Details</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       4. DOCTOR PROFILES SECTION (6 DOCTORS)
+       ========================================= -->
+  <section id="doctors" class="doctors-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fa-solid fa-user-doctor"></i> Meet Our Specialists</div>
+        <h2>Experienced & Compassionate Doctors</h2>
+        <p>Filter by medical specialty or book a consultation directly with our senior consultants.</p>
+      </div>
+
+      <div class="doctor-filters reveal">
+        <button type="button" class="doc-filter-btn active" data-specialty="all">All Specialists</button>
+        <button type="button" class="doc-filter-btn" data-specialty="Cardiology">Cardiology</button>
+        <button type="button" class="doc-filter-btn" data-specialty="Neurology">Neurology</button>
+        <button type="button" class="doc-filter-btn" data-specialty="Orthopedics">Orthopedics</button>
+        <button type="button" class="doc-filter-btn" data-specialty="Pediatrics">Pediatrics</button>
+        <button type="button" class="doc-filter-btn" data-specialty="Gynecology">Gynecology</button>
+        <button type="button" class="doc-filter-btn" data-specialty="Dermatology">Dermatology</button>
+      </div>
+
+      <div class="doctors-grid" id="doctorsGrid">
+        <!-- Doctor 1 -->
+        <article class="doctor-card reveal" data-specialty="Cardiology">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e3f2fd/0f2942?text=Dr.+Aarav+Sharma';" alt="Dr. Aarav Sharma" />
+            <span class="exp-badge">18+ Yrs Exp</span>
+          </div>
+          <div class="doctor-info">
+            <span class="doc-dept-tag">Cardiology</span>
+            <h3>Dr. Aarav Sharma</h3>
+            <p class="doc-qual">MD, DM (Cardiology) • Chief Interventional Cardiologist</p>
+            <div class="doc-schedule">
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon – Fri: 9:30 AM – 2:30 PM</span>
+            </div>
+            <a href="#appointment" class="btn btn-teal book-doc-btn" data-doctor="Dr. Aarav Sharma" data-dept="Cardiology">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+
+        <!-- Doctor 2 -->
+        <article class="doctor-card reveal" data-specialty="Neurology">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e3f2fd/0f2942?text=Dr.+Priya+Nair';" alt="Dr. Priya Nair" />
+            <span class="exp-badge">15+ Yrs Exp</span>
+          </div>
+          <div class="doctor-info">
+            <span class="doc-dept-tag">Neurology</span>
+            <h3>Dr. Priya Nair</h3>
+            <p class="doc-qual">MD, DM (Neurology) • Senior Consultant Neurologist</p>
+            <div class="doc-schedule">
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon, Wed, Fri: 10:00 AM – 4:00 PM</span>
+            </div>
+            <a href="#appointment" class="btn btn-teal book-doc-btn" data-doctor="Dr. Priya Nair" data-dept="Neurology">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+
+        <!-- Doctor 3 -->
+        <article class="doctor-card reveal" data-specialty="Orthopedics">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e3f2fd/0f2942?text=Dr.+Rohan+Verma';" alt="Dr. Rohan Verma" />
+            <span class="exp-badge">14+ Yrs Exp</span>
+          </div>
+          <div class="doctor-info">
+            <span class="doc-dept-tag">Orthopedics</span>
+            <h3>Dr. Rohan Verma</h3>
+            <p class="doc-qual">MS (Orthopedics), Fellowship in Joint Replacement</p>
+            <div class="doc-schedule">
+              <i class="fa-regular fa-clock"></i>
+              <span>Tue – Sat: 11:00 AM – 5:00 PM</span>
+            </div>
+            <a href="#appointment" class="btn btn-teal book-doc-btn" data-doctor="Dr. Rohan Verma" data-dept="Orthopedics">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+
+        <!-- Doctor 4 -->
+        <article class="doctor-card reveal" data-specialty="Pediatrics">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e3f2fd/0f2942?text=Dr.+Ananya+Patel';" alt="Dr. Ananya Patel" />
+            <span class="exp-badge">12+ Yrs Exp</span>
+          </div>
+          <div class="doctor-info">
+            <span class="doc-dept-tag">Pediatrics</span>
+            <h3>Dr. Ananya Patel</h3>
+            <p class="doc-qual">MD (Pediatrics), IAP Neonatology Fellow</p>
+            <div class="doc-schedule">
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon – Sat: 9:00 AM – 1:30 PM</span>
+            </div>
+            <a href="#appointment" class="btn btn-teal book-doc-btn" data-doctor="Dr. Ananya Patel" data-dept="Pediatrics">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+
+        <!-- Doctor 5 -->
+        <article class="doctor-card reveal" data-specialty="Gynecology">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e3f2fd/0f2942?text=Dr.+Meera+Krishnan';" alt="Dr. Meera Krishnan" />
+            <span class="exp-badge">16+ Yrs Exp</span>
+          </div>
+          <div class="doctor-info">
+            <span class="doc-dept-tag">Gynecology</span>
+            <h3>Dr. Meera Krishnan</h3>
+            <p class="doc-qual">MS (Obstetrics & Gynecology), Laparoscopic Surgeon</p>
+            <div class="doc-schedule">
+              <i class="fa-regular fa-clock"></i>
+              <span>Tue, Thu, Sat: 10:30 AM – 4:30 PM</span>
+            </div>
+            <a href="#appointment" class="btn btn-teal book-doc-btn" data-doctor="Dr. Meera Krishnan" data-dept="Gynecology">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+
+        <!-- Doctor 6 -->
+        <article class="doctor-card reveal" data-specialty="Dermatology">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=700&q=80" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e3f2fd/0f2942?text=Dr.+Vikram+Rao';" alt="Dr. Vikram Rao" />
+            <span class="exp-badge">11+ Yrs Exp</span>
+          </div>
+          <div class="doctor-info">
+            <span class="doc-dept-tag">Dermatology</span>
+            <h3>Dr. Vikram Rao</h3>
+            <p class="doc-qual">MD (Dermatology, Venereology & Leprosy)</p>
+            <div class="doc-schedule">
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon – Fri: 2:00 PM – 7:00 PM</span>
+            </div>
+            <a href="#appointment" class="btn btn-teal book-doc-btn" data-doctor="Dr. Vikram Rao" data-dept="Dermatology">
+              <i class="fa-solid fa-calendar-plus"></i> Book Appointment
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       5. MEDICAL SERVICES SECTION (9 SERVICES)
+       ========================================= -->
+  <section id="services" class="services-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fa-solid fa-hand-holding-medical"></i> Diagnostic & Support Care</div>
+        <h2>Comprehensive Medical Services</h2>
+        <p>Round-the-clock diagnostic precision, surgical excellence, and support services under one roof.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+          <div>
+            <h3>General Health Check-ups</h3>
+            <p>Tailored executive, cardiac, and senior citizen wellness packages with same-day physician review.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-vials"></i></div>
+          <div>
+            <h3>Laboratory Testing</h3>
+            <p>NABL-accredited automated biochemistry, hematology, microbiology, and digital pathology lab.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-x-ray"></i></div>
+          <div>
+            <h3>X-ray and Scanning</h3>
+            <p>Low-dose digital radiography, 4D color Doppler ultrasound, and bone mineral densitometry.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-radiation"></i></div>
+          <div>
+            <h3>MRI and CT Scan</h3>
+            <p>High-definition 3-Tesla silent MRI and 128-slice multi-detector CT angiography imaging.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+          <div>
+            <h3>Pharmacy Services</h3>
+            <p>24/7 in-house hospital pharmacy stocked with temperature-controlled genuine medications.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-truck-medical"></i></div>
+          <div>
+            <h3>Ambulance Services</h3>
+            <p>GPS-tracked Advanced Cardiac Life Support (ACLS) ambulances with trained emergency paramedics.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-kit-medical"></i></div>
+          <div>
+            <h3>Emergency Care</h3>
+            <p>Dedicated 24/7 trauma resuscitation unit with immediate specialist on-call coverage.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-scalpel-line-dashed"></i><i class="fa-solid fa-hospital"></i></div>
+          <div>
+            <h3>Surgical Services</h3>
+            <p>Modular HEPA-filtered operation theaters for laparoscopic, robotic, cardiac, and orthopedic surgery.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fa-solid fa-shield-virus"></i></div>
+          <div>
+            <h3>Preventive Healthcare</h3>
+            <p>Adult & pediatric immunization clinics, lifestyle counseling, and early cancer screening programs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       6. APPOINTMENT BOOKING SECTION
+       ========================================= -->
+  <section id="appointment" class="booking-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fa-solid fa-calendar-check"></i> Outpatient Scheduling</div>
+        <h2>Book Your Consultation</h2>
+        <p>Select your medical department, preferred specialist, and convenient time slot below.</p>
+      </div>
+
+      <div class="booking-wrapper reveal">
+        <!-- Left Guide Panel -->
+        <aside class="booking-info-panel">
+          <div>
+            <h3>Simple & Guided Scheduling</h3>
+            <p>Our patient coordination desk reviews every appointment request promptly to ensure minimal waiting times.</p>
+
+            <ul class="booking-steps">
+              <li>
+                <span class="step-num">1</span>
+                <div><strong>Choose Department & Doctor:</strong> Selecting a department automatically filters available consultants.</div>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <div><strong>Pick Date & Time:</strong> Choose a preferred morning or afternoon OPD window.</div>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <div><strong>Receive Confirmation:</strong> Our desk will confirm your exact token number via SMS or phone call.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="request-notice-box">
+            <p style="font-weight: 700; margin-bottom: 4px;"><i class="fa-solid fa-circle-info"></i> Scheduling Policy</p>
+            <p>Online submissions are appointment requests until confirmed by our hospital scheduling desk. For urgent medical emergencies, please call <strong>+1 (800) 555-9110</strong> immediately.</p>
+          </div>
+        </aside>
+
+        <!-- Right Interactive Form -->
+        <div class="booking-form-panel">
+          <div class="disclaimer-banner">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Note: Online appointment submissions are requests until confirmed by the hospital via phone or SMS.</span>
+          </div>
+
+          <form id="appointmentForm" novalidate>
+            <div class="form-grid">
+              <!-- Patient Full Name -->
+              <div class="form-group" id="grp-patientName">
+                <label for="patientName">Patient's Full Name <span>*</span></label>
+                <input type="text" id="patientName" class="form-control" placeholder="e.g., Kavya Reddy" required />
+                <span class="error-msg">Please enter the patient's full name.</span>
+              </div>
+
+              <!-- Age -->
+              <div class="form-group" id="grp-patientAge">
+                <label for="patientAge">Age (Years) <span>*</span></label>
+                <input type="number" id="patientAge" class="form-control" min="0" max="120" placeholder="e.g., 34" required />
+                <span class="error-msg">Please enter a valid age (0–120).</span>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group" id="grp-patientGender">
+                <label for="patientGender">Gender <span>*</span></label>
+                <select id="patientGender" class="form-control" required>
+                  <option value="">-- Select Gender --</option>
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="error-msg">Please select gender.</span>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="form-group" id="grp-patientPhone">
+                <label for="patientPhone">Phone Number <span>*</span></label>
+                <input type="tel" id="patientPhone" class="form-control" placeholder="e.g., +91 98765 43210" required />
+                <span class="error-msg">Please enter a valid phone number (at least 7 digits).</span>
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-group full-width" id="grp-patientEmail">
+                <label for="patientEmail">Email Address <span>*</span></label>
+                <input type="email" id="patientEmail" class="form-control" placeholder="e.g., kavya.reddy@example.com" required />
+                <span class="error-msg">Please enter a valid email address.</span>
+              </div>
+
+              <!-- Medical Department -->
+              <div class="form-group" id="grp-deptSelect">
+                <label for="deptSelect">Select Medical Department <span>*</span></label>
+                <select id="deptSelect" class="form-control" required>
+                  <option value="">-- Choose Department --</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="Gynecology">Gynecology</option>
+                  <option value="Dentistry">Dentistry</option>
+                  <option value="Ophthalmology">Ophthalmology</option>
+                  <option value="General Medicine">General Medicine</option>
+                  <option value="Emergency Medicine">Emergency Medicine</option>
+                </select>
+                <span class="error-msg">Please select a medical department.</span>
+              </div>
+
+              <!-- Preferred Doctor -->
+              <div class="form-group" id="grp-doctorSelect">
+                <label for="doctorSelect">Select Preferred Doctor <span>*</span></label>
+                <select id="doctorSelect" class="form-control" required>
+                  <option value="">-- Choose Doctor --</option>
+                </select>
+                <span class="error-msg">Please select a preferred doctor.</span>
+              </div>
+
+              <!-- Preferred Date -->
+              <div class="form-group" id="grp-apptDate">
+                <label for="apptDate">Preferred Appointment Date <span>*</span></label>
+                <input type="date" id="apptDate" class="form-control" required />
+                <span class="error-msg">Please choose today or a future date.</span>
+              </div>
+
+              <!-- Preferred Time -->
+              <div class="form-group" id="grp-apptTime">
+                <label for="apptTime">Preferred Time Slot <span>*</span></label>
+                <select id="apptTime" class="form-control" required>
+                  <option value="">-- Select Time --</option>
+                  <option value="09:30 AM">09:30 AM (Morning OPD)</option>
+                  <option value="11:00 AM">11:00 AM (Morning OPD)</option>
+                  <option value="12:30 PM">12:30 PM (Midday OPD)</option>
+                  <option value="03:00 PM">03:00 PM (Afternoon OPD)</option>
+                  <option value="04:30 PM">04:30 PM (Afternoon OPD)</option>
+                  <option value="06:00 PM">06:00 PM (Evening OPD)</option>
+                </select>
+                <span class="error-msg">Please select a preferred time slot.</span>
+              </div>
+
+              <!-- Reason for Consultation -->
+              <div class="form-group full-width" id="grp-reason">
+                <label for="reason">Reason for Consultation <span>*</span></label>
+                <textarea id="reason" rows="3" class="form-control" placeholder="Briefly describe symptoms, follow-up needs, or check-up request..." required></textarea>
+                <span class="error-msg">Please enter your reason for consultation.</span>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group full-width">
+                <button type="submit" class="btn btn-teal" style="width: 100%; font-size: 1rem;">
+                  <i class="fa-solid fa-paper-plane"></i> Submit Appointment
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Confirmation Summary Card -->
+          <div id="appointmentConfirmation" class="confirmation-card" role="alert">
+            <h4><i class="fa-solid fa-circle-check"></i> Appointment Request Submitted!</h4>
+            <p id="confirmationBody"></p>
+            <p style="margin-top: 10px; font-size: 0.84rem; font-weight: 700; color: #166534;">
+              Status: Pending Confirmation — Our scheduling team will contact you shortly to confirm your appointment slot.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       7. HEALTH TIPS & WELLNESS RESOURCES
+       ========================================= -->
+  <section id="health" class="health-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fa-solid fa-heart-circle-plus"></i> Health & Wellness Hub</div>
+        <h2>Preventive Health Tips & Patient Guidance</h2>
+        <p>Evidence-based wellness advice from LifeCare specialists alongside an interactive BMI health check tool.</p>
+      </div>
+
+      <div class="health-layout">
+        <!-- 4 Health Guidance Cards -->
+        <div class="tips-grid">
+          <article class="tip-card reveal">
+            <div class="tip-top">
+              <div class="tip-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <span class="tip-cat">Cardiology</span>
+            </div>
+            <h3>Protect Your Heart Daily</h3>
+            <p>Aim for 30 minutes of brisk walking five days a week, limit sodium intake, and monitor blood pressure regularly after age 35.</p>
+          </article>
+
+          <article class="tip-card reveal">
+            <div class="tip-top">
+              <div class="tip-icon"><i class="fa-solid fa-stethoscope"></i></div>
+              <span class="tip-cat">Preventive Care</span>
+            </div>
+            <h3>Annual Full-Body Screenings</h3>
+            <p>Routine blood sugar, lipid profile, thyroid, and vitamin D checks detect silent metabolic conditions years before symptoms appear.</p>
+          </article>
+
+          <article class="tip-card reveal">
+            <div class="tip-top">
+              <div class="tip-icon"><i class="fa-solid fa-apple-whole"></i></div>
+              <span class="tip-cat">Nutrition</span>
+            </div>
+            <h3>Balanced Hydration & Diet</h3>
+            <p>Fill half your plate with colorful vegetables, prioritize lean proteins and whole grains, and drink 2.5–3 liters of clean water daily.</p>
+          </article>
+
+          <article class="tip-card reveal">
+            <div class="tip-top">
+              <div class="tip-icon"><i class="fa-solid fa-bed"></i></div>
+              <span class="tip-cat">Neurology & Sleep</span>
+            </div>
+            <h3>Restorative Sleep Hygiene</h3>
+            <p>Maintain a consistent 7–8 hour sleep schedule and avoid screens 45 minutes before bed to support memory and immune resilience.</p>
+          </article>
+        </div>
+
+        <!-- Interactive BMI Quick Check Widget -->
+        <aside class="bmi-widget reveal">
+          <h3><i class="fa-solid fa-weight-scale" style="color: var(--teal);"></i> Quick BMI Wellness Check</h3>
+          <p>Calculate your Body Mass Index to evaluate your healthy weight range.</p>
+
+          <div class="form-group">
+            <label for="bmiHeight">Height (cm)</label>
+            <input type="number" id="bmiHeight" class="form-control" placeholder="e.g., 170" min="50" max="250" />
+          </div>
+
+          <div class="form-group">
+            <label for="bmiWeight">Weight (kg)</label>
+            <input type="number" id="bmiWeight" class="form-control" placeholder="e.g., 68" min="10" max="300" />
+          </div>
+
+          <button type="button" id="calcBmiBtn" class="btn btn-teal" style="width: 100%;">
+            Calculate BMI
+          </button>
+
+          <div id="bmiResult" class="bmi-result">
+            <div class="bmi-score" id="bmiValue">22.5</div>
+            <p id="bmiCategory" style="font-weight: 700; color: var(--teal-dark); margin: 4px 0;"></p>
+            <p id="bmiAdvice" style="font-size: 0.82rem; color: var(--text-muted);"></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       EMERGENCY HELPLINE BANNER
+       ========================================= -->
+  <section id="emergency" class="emergency-strip">
+    <div class="container emergency-strip-inner">
+      <div>
+        <h3><i class="fa-solid fa-truck-medical"></i> 24/7 Emergency & Trauma Helpline</h3>
+        <p>Immediate ambulance dispatch, cardiac emergency response, and round-the-clock critical care doctors.</p>
+      </div>
+      <a href="tel:+18005559110" class="emergency-call-box">
+        <i class="fa-solid fa-phone-volume"></i> +1 (800) 555-9110
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       8. CONTACT INFORMATION & MAP SECTION
+       ========================================= -->
+  <section id="contact" class="contact-section section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i class="fa-solid fa-location-dot"></i> Location & Support</div>
+        <h2>Contact LifeCare Hospital</h2>
+        <p>Reach out to our patient helpdesk for directions, insurance queries, or medical record assistance.</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-cards">
+          <div class="contact-card">
+            <i class="fa-solid fa-hospital"></i>
+            <h4>Hospital Address</h4>
+            <p>450 Health Sciences Boulevard<br />Medical District, Vijayawada, AP 520008</p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fa-solid fa-phone"></i>
+            <h4>Helpline Numbers</h4>
+            <p>OPD Desk: +91 (866) 555-0140<br />24/7 Emergency: +1 (800) 555-9110</p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <h4>Email Support</h4>
+            <p>care@lifecarehospital.org<br />appointments@lifecarehospital.org</p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fa-solid fa-clock"></i>
+            <h4>Consultation Hours</h4>
+            <p>OPD Clinics: 8:00 AM – 8:00 PM<br />Emergency & Pharmacy: Open 24/7</p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            title="LifeCare Multispeciality Hospital Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61205.51223251074!2d80.6098664!3d16.5061743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <span class="logo-emblem"><i class="fa-solid fa-heart-pulse"></i></span>
+            <div class="brand-text">
+              <span class="brand-name">LifeCare</span>
+              <span class="brand-sub">Multispeciality Hospital</span>
+            </div>
+          </a>
+          <p>
+            Delivering compassionate, patient-centered multispeciality healthcare with advanced medical technology and trusted clinical specialists.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Hospital</a></li>
+            <li><a href="#departments">Medical Departments</a></li>
+            <li><a href="#doctors">Our Doctors</a></li>
+            <li><a href="#services">Medical Services</a></li>
+            <li><a href="#appointment">Book Appointment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Key Specialties</h4>
+          <ul class="footer-links">
+            <li><a href="#departments">Cardiology & Heart Care</a></li>
+            <li><a href="#departments">Neurology & Stroke Unit</a></li>
+            <li><a href="#departments">Orthopedics & Joint Care</a></li>
+            <li><a href="#departments">Pediatrics & Neonatology</a></li>
+            <li><a href="#departments">Gynecology & Maternity</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Emergency & Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-truck-medical" style="color: #f87171; margin-right: 6px;"></i> 24/7 Trauma: +1 (800) 555-9110</li>
+            <li><i class="fa-solid fa-phone" style="color: #5eead4; margin-right: 6px;"></i> OPD: +91 (866) 555-0140</li>
+            <li><i class="fa-solid fa-envelope" style="color: #5eead4; margin-right: 6px;"></i> care@lifecarehospital.org</li>
+            <li><i class="fa-solid fa-location-dot" style="color: #5eead4; margin-right: 6px;"></i> 450 Health Sciences Blvd</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LifeCare Multispeciality Hospital. All Rights Reserved.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       DEPARTMENT DETAILS MODAL
+       ========================================= -->
+  <div class="modal-backdrop" id="deptModal" role="dialog" aria-modal="true" aria-labelledby="deptModalTitle">
+    <div class="modal-box">
+      <button type="button" class="modal-close" id="closeDeptModal" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="deptModalImg" class="modal-banner-img" src="" alt="Department Preview" />
+      <div class="modal-body">
+        <h3 id="deptModalTitle">Department Name</h3>
+        <p id="deptModalLead" style="font-size: 0.88rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px;"></p>
+        <p id="deptModalDesc" style="font-size: 0.94rem; color: var(--text-body);"></p>
+        <div class="modal-tags" id="deptModalTags"></div>
+        <a href="#appointment" class="btn btn-teal" id="deptModalBookBtn" style="width: 100%;">
+          <i class="fa-solid fa-calendar-check"></i> Book Consultation in This Department
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       EMERGENCY CONTACT MODAL
+       ========================================= -->
+  <div class="modal-backdrop" id="emergencyModal" role="dialog" aria-modal="true" aria-labelledby="emergModalTitle">
+    <div class="modal-box" style="max-width: 500px; border-top: 6px solid var(--emergency);">
+      <button type="button" class="modal-close" id="closeEmergModal" aria-label="Close emergency modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: var(--emergency-soft); color: var(--emergency); padding: 6px 14px; border-radius: 50px; font-weight: 700; font-size: 0.82rem; margin-bottom: 12px;">
+          <i class="fa-solid fa-truck-medical"></i> 24/7 Rapid Response
+        </div>
+        <h3 id="emergModalTitle">Emergency & Ambulance Desk</h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px;">
+          Our emergency medicine consultants, trauma surgeons, and ACLS ambulances are on standby 24 hours a day.
+        </p>
+        <div style="background: var(--bg-light); padding: 16px; border-radius: 14px; margin-bottom: 16px;">
+          <p style="font-weight: 700; color: var(--navy); margin-bottom: 6px;">24/7 Emergency Toll-Free:</p>
+          <p style="font-size: 1.35rem; font-weight: 800; color: var(--emergency);">+1 (800) 555-9110</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Direct Ambulance Dispatch: +91 (866) 555-0199</p>
+        </div>
+        <a href="tel:+18005559110" class="btn btn-emergency" style="width: 100%;">
+          <i class="fa-solid fa-phone-volume"></i> Call Emergency Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       JAVASCRIPT FUNCTIONALITY
+       ========================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        /* 1. Department & Doctor Structured Data */
+        const DEPARTMENTS_DATA = {
+          "Cardiology": {
+            lead: "Lead Specialist: Dr. Aarav Sharma (MD, DM Cardiology)",
+            img: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=800&q=80",
+            desc: "Our Heart Institute provides 24/7 primary angioplasty, 3D echocardiography, Holter monitoring, pacemaker implantation, and preventive cardiac wellness programs.",
+            services: ["2D/3D Echo & TMT", "Coronary Angiography", "Pacemaker Clinic", "Heart Failure Care"]
+          },
+          "Neurology": {
+            lead: "Lead Specialist: Dr. Priya Nair (MD, DM Neurology)",
+            img: "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80",
+            desc: "Equipped with digital EEG, EMG/NCV labs, and a rapid thrombolysis stroke unit for timely neurological intervention and neuro-rehabilitation.",
+            services: ["Stroke Rescue Unit", "Video EEG & Epilepsy", "Migraine Clinic", "Neuropathy Care"]
+          },
+          "Orthopedics": {
+            lead: "Lead Specialist: Dr. Rohan Verma (MS Orthopedics)",
+            img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+            desc: "Specializing in computer-navigated knee & hip replacements, ACL reconstruction, fracture trauma management, and spine rehabilitation.",
+            services: ["Joint Replacement", "Sports Arthroscopy", "Spine Care", "Physiotherapy Rehab"]
+          },
+          "Pediatrics": {
+            lead: "Lead Specialist: Dr. Ananya Patel (MD Pediatrics)",
+            img: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80",
+            desc: "Dedicated Level-III NICU, pediatric asthma & allergy clinic, developmental milestone tracking, and complete vaccination schedules.",
+            services: ["Level-III NICU", "Immunization Clinic", "Growth & Nutrition", "Pediatric Emergency"]
+          },
+          "Dermatology": {
+            lead: "Lead Specialist: Dr. Vikram Rao (MD Dermatology)",
+            img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80",
+            desc: "Comprehensive medical dermatology for psoriasis, vitiligo, chronic eczema, trichology hair restoration, and US-FDA approved laser therapy.",
+            services: ["Clinical Skin Care", "Allergy Patch Testing", "Trichology Clinic", "Laser Dermatology"]
+          },
+          "Gynecology": {
+            lead: "Lead Specialist: Dr. Meera Krishnan (MS OBGYN)",
+            img: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80",
+            desc: "Compassionate maternity care, fetal medicine ultrasound, minimally invasive hysterectomy, and PCOS & menopause wellness clinics.",
+            services: ["Antenatal & Delivery", "High-Risk Pregnancy", "Laparoscopic Surgery", "PCOS Wellness"]
+          },
+          "Dentistry": {
+            lead: "Lead Specialist: Dr. Neha Kulkarni (MDS Endodontics)",
+            img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
+            desc: "Digital OPG dental imaging, single-sitting rotary root canals, titanium dental implants, and pediatric preventive sealants.",
+            services: ["Single-Visit RCT", "Dental Implants", "Clear Aligners", "Pediatric Dentistry"]
+          },
+          "Ophthalmology": {
+            lead: "Lead Specialist: Dr. Siddharth Menon (MS Ophthalmology)",
+            img: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80",
+            desc: "Blade-free phacoemulsification cataract surgery, retinal OCT diagnostics, glaucoma management, and pediatric vision screening.",
+            services: ["Phaco Cataract Care", "Retina & Glaucoma", "OCT Eye Imaging", "Refractive Clinic"]
+          },
+          "General Medicine": {
+            lead: "Lead Specialist: Dr. Suresh Iyer (MD Internal Medicine)",
+            img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+            desc: "Holistic management of chronic lifestyle disorders, metabolic syndromes, infectious diseases, and executive annual health check-ups.",
+            services: ["Diabetes & Thyroid", "Hypertension Clinic", "Infectious Diseases", "Executive Check-ups"]
+          },
+          "Emergency Medicine": {
+            lead: "24/7 Trauma & Critical Care Team",
+            img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+            desc: "Immediate triage, bedside ultrasound, ventilator-equipped resuscitation bays, and direct elevator access to cath lab and operation theaters.",
+            services: ["24/7 Trauma Triage", "ACLS Ambulances", "Cardiac Resuscitation", "Toxicology Care"]
+          }
+        };
+
+        const DOCTORS_BY_DEPT = {
+          "Cardiology": ["Dr. Aarav Sharma (MD, DM Cardiology)"],
+          "Neurology": ["Dr. Priya Nair (MD, DM Neurology)"],
+          "Orthopedics": ["Dr. Rohan Verma (MS Orthopedics)"],
+          "Pediatrics": ["Dr. Ananya Patel (MD Pediatrics)"],
+          "Dermatology": ["Dr. Vikram Rao (MD Dermatology)"],
+          "Gynecology": ["Dr. Meera Krishnan (MS OBGYN)"],
+          "Dentistry": ["Dr. Neha Kulkarni (MDS Dental Surgery)"],
+          "Ophthalmology": ["Dr. Siddharth Menon (MS Ophthalmology)"],
+          "General Medicine": ["Dr. Suresh Iyer (MD General Medicine)"],
+          "Emergency Medicine": ["Duty Emergency Specialist (24/7 Trauma)"]
+        };
+
+        /* 2. Mobile Navigation Drawer */
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburgerBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          const icon = hamburgerBtn.querySelector('i');
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-xmark');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = hamburgerBtn.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+          });
+        });
+
+        /* 3. Department Details Modal */
+        const deptModal = document.getElementById('deptModal');
+        const closeDeptModal = document.getElementById('closeDeptModal');
+        const deptModalBookBtn = document.getElementById('deptModalBookBtn');
+        const deptSelect = document.getElementById('deptSelect');
+        const doctorSelect = document.getElementById('doctorSelect');
+
+        const populateDoctors = (selectedDept, preferredDoctorPrefix = '') => {
+          doctorSelect.innerHTML = '<option value="">-- Choose Doctor --</option>';
+          const list = selectedDept && DOCTORS_BY_DEPT[selectedDept]
+            ? DOCTORS_BY_DEPT[selectedDept]
+            : Object.values(DOCTORS_BY_DEPT).flat();
+
+          list.forEach(docLabel => {
+            const opt = document.createElement('option');
+            opt.value = docLabel;
+            opt.textContent = docLabel;
+            if (preferredDoctorPrefix && docLabel.startsWith(preferredDoctorPrefix)) {
+              opt.selected = true;
+            }
+            doctorSelect.appendChild(opt);
+          });
+
+          if (!preferredDoctorPrefix && list.length === 1) {
+            doctorSelect.value = list[0];
+          }
+        };
+
+        populateDoctors('');
+
+        deptSelect.addEventListener('change', () => {
+          populateDoctors(deptSelect.value);
+        });
+
+        document.querySelectorAll('.view-dept-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const deptName = btn.getAttribute('data-dept');
+            const data = DEPARTMENTS_DATA[deptName];
+            if (!data) return;
+
+            document.getElementById('deptModalTitle').textContent = `${deptName} Department`;
+            document.getElementById('deptModalLead').textContent = data.lead;
+            document.getElementById('deptModalDesc').textContent = data.desc;
+            const imgEl = document.getElementById('deptModalImg');
+            imgEl.src = data.img;
+            imgEl.alt = deptName;
+
+            document.getElementById('deptModalTags').innerHTML = data.services
+              .map(s => `<span class="modal-tag"><i class="fa-solid fa-check" style="margin-right:5px;"></i>${s}</span>`)
+              .join('');
+
+            deptModalBookBtn.setAttribute('data-dept', deptName);
+            deptModal.classList.add('open');
+          });
+        });
+
+        closeDeptModal.addEventListener('click', () => deptModal.classList.remove('open'));
+        deptModal.addEventListener('click', (e) => {
+          if (e.target === deptModal) deptModal.classList.remove('open');
+        });
+
+        deptModalBookBtn.addEventListener('click', () => {
+          const deptName = deptModalBookBtn.getAttribute('data-dept');
+          if (deptName) {
+            deptSelect.value = deptName;
+            populateDoctors(deptName);
+          }
+          deptModal.classList.remove('open');
+        });
+
+        /* 4. Emergency Modal */
+        const emergencyModal = document.getElementById('emergencyModal');
+        document.getElementById('openEmergencyModalBtn').addEventListener('click', () => {
+          emergencyModal.classList.add('open');
+        });
+        document.getElementById('closeEmergModal').addEventListener('click', () => {
+          emergencyModal.classList.remove('open');
+        });
+        emergencyModal.addEventListener('click', (e) => {
+          if (e.target === emergencyModal) emergencyModal.classList.remove('open');
+        });
+
+        /* 5. Doctor Specialty Filter & Direct Book Button */
+        const docFilterBtns = document.querySelectorAll('.doc-filter-btn');
+        const doctorCards = document.querySelectorAll('.doctor-card');
+
+        docFilterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            docFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const specialty = btn.getAttribute('data-specialty');
+
+            doctorCards.forEach(card => {
+              if (specialty === 'all' || card.getAttribute('data-specialty') === specialty) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          });
+        });
+
+        document.querySelectorAll('.book-doc-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const dept = btn.getAttribute('data-dept');
+            const doc = btn.getAttribute('data-doctor');
+            deptSelect.value = dept;
+            populateDoctors(dept, doc);
+          });
+        });
+
+        /* 6. Appointment Form Validation & Confirmation */
+        const apptDateInput = document.getElementById('apptDate');
+        const todayStr = new Date().toISOString().split('T')[0];
+        apptDateInput.setAttribute('min', todayStr);
+
+        const appointmentForm = document.getElementById('appointmentForm');
+        const confirmationCard = document.getElementById('appointmentConfirmation');
+        const confirmationBody = document.getElementById('confirmationBody');
+
+        const setError = (groupId, inputEl, hasErr) => {
+          const grp = document.getElementById(groupId);
+          if (!grp || !inputEl) return;
+          grp.classList.toggle('has-error', hasErr);
+          inputEl.classList.toggle('error', hasErr);
+        };
+
+        appointmentForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const pName = document.getElementById('patientName');
+          const pAge = document.getElementById('patientAge');
+          const pGender = document.getElementById('patientGender');
+          const pPhone = document.getElementById('patientPhone');
+          const pEmail = document.getElementById('patientEmail');
+          const pTime = document.getElementById('apptTime');
+          const pReason = document.getElementById('reason');
+
+          let isValid = true;
+
+          if (pName.value.trim().length < 2) {
+            setError('grp-patientName', pName, true);
+            isValid = false;
+          } else {
+            setError('grp-patientName', pName, false);
+          }
+
+          const ageVal = Number(pAge.value);
+          if (pAge.value === '' || isNaN(ageVal) || ageVal < 0 || ageVal > 120) {
+            setError('grp-patientAge', pAge, true);
+            isValid = false;
+          } else {
+            setError('grp-patientAge', pAge, false);
+          }
+
+          if (!pGender.value) {
+            setError('grp-patientGender', pGender, true);
+            isValid = false;
+          } else {
+            setError('grp-patientGender', pGender, false);
+          }
+
+          const phoneDigits = pPhone.value.replace(/\D/g, '');
+          if (phoneDigits.length < 7) {
+            setError('grp-patientPhone', pPhone, true);
+            isValid = false;
+          } else {
+            setError('grp-patientPhone', pPhone, false);
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(pEmail.value.trim())) {
+            setError('grp-patientEmail', pEmail, true);
+            isValid = false;
+          } else {
+            setError('grp-patientEmail', pEmail, false);
+          }
+
+          if (!deptSelect.value) {
+            setError('grp-deptSelect', deptSelect, true);
+            isValid = false;
+          } else {
+            setError('grp-deptSelect', deptSelect, false);
+          }
+
+          if (!doctorSelect.value) {
+            setError('grp-doctorSelect', doctorSelect, true);
+            isValid = false;
+          } else {
+            setError('grp-doctorSelect', doctorSelect, false);
+          }
+
+          if (!apptDateInput.value || apptDateInput.value < todayStr) {
+            setError('grp-apptDate', apptDateInput, true);
+            isValid = false;
+          } else {
+            setError('grp-apptDate', apptDateInput, false);
+          }
+
+          if (!pTime.value) {
+            setError('grp-apptTime', pTime, true);
+            isValid = false;
+          } else {
+            setError('grp-apptTime', pTime, false);
+          }
+
+          if (pReason.value.trim().length < 3) {
+            setError('grp-reason', pReason, true);
+            isValid = false;
+          } else {
+            setError('grp-reason', pReason, false);
+          }
+
+          if (!isValid) {
+            confirmationCard.classList.remove('show');
+            return;
+          }
+
+          const reqId = 'LC-' + Math.floor(100000 + Math.random() * 900000);
+          const formattedDate = new Date(apptDateInput.value + 'T00:00:00').toLocaleDateString('en-US', {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          });
+
+          confirmationBody.innerHTML = `
+            Thank you, <strong>${pName.value.trim()}</strong> (${pAge.value} yrs, ${pGender.value}). Your appointment request (ID: <strong>${reqId}</strong>) for <strong>${deptSelect.value}</strong> with <strong>${doctorSelect.value}</strong> on <strong>${formattedDate}</strong> at <strong>${pTime.value}</strong> has been received. A confirmation message will be sent to <strong>${pPhone.value.trim()}</strong> and <strong>${pEmail.value.trim()}</strong>.
+          `;
+
+          confirmationCard.classList.add('show');
+          confirmationCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          appointmentForm.reset();
+          populateDoctors('');
+          apptDateInput.setAttribute('min', todayStr);
+        });
+
+        /* 7. Interactive BMI Calculator */
+        document.getElementById('calcBmiBtn').addEventListener('click', () => {
+          const h = parseFloat(document.getElementById('bmiHeight').value);
+          const w = parseFloat(document.getElementById('bmiWeight').value);
+          const resultBox = document.getElementById('bmiResult');
+
+          if (!h || !w || h < 50 || w < 10) {
+            document.getElementById('bmiValue').textContent = '--';
+            document.getElementById('bmiCategory').textContent = 'Please enter valid height & weight';
+            document.getElementById('bmiAdvice').textContent = 'Height in cm (e.g., 170) and weight in kg (e.g., 68).';
+            resultBox.classList.add('show');
+            return;
+          }
+
+          const heightMeters = h / 100;
+          const bmi = (w / (heightMeters * heightMeters)).toFixed(1);
+          let category = '';
+          let advice = '';
+
+          if (bmi < 18.5) {
+            category = 'Underweight Range';
+            advice = 'Consider consulting our General Medicine & Nutrition specialists for a balanced diet plan.';
+          } else if (bmi < 25) {
+            category = 'Healthy Weight Range';
+            advice = 'Great job! Maintain regular physical activity, hydration, and annual preventive check-ups.';
+          } else if (bmi < 30) {
+            category = 'Overweight Range';
+            advice = 'Regular cardio exercise and mindful portion control can help bring your BMI into the optimal range.';
+          } else {
+            category = 'Obese Range';
+            advice = 'We recommend a preventive metabolic & cardiac health screening with our physicians.';
+          }
+
+          document.getElementById('bmiValue').textContent = bmi;
+          document.getElementById('bmiCategory').textContent = category;
+          document.getElementById('bmiAdvice').textContent = advice;
+          resultBox.classList.add('show');
+        });
+
+        /* 8. Scroll Reveal Animation */
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          revealEls.forEach(el => observer.observe(el));
+        } else {
+          revealEls.forEach(el => el.classList.add('visible'));
+        }
+      } catch (err) {
+        console.error('Initialization error:', err);
+      }
+    });
+  </script>
+</body>
+</html>
